@@ -1,18 +1,36 @@
 {{define "yield"}}
 
-    <h1>Signup Page</h1>
+            <div class="card">
+                <div class="card-header">
+                    <h5>Signup Page</h5>
+                </div>
+                <div class="card-body">
+
+                    {{template "signupForm"}}
+
+                </div>
+            </div>
+
+{{end}}
+
+
+{{define "signupForm"}}
 
     <form>
-        <div class="mb-3">
-            <label for="email" class="visually-hidden">Email</label>
-            <input type="email" name="email" class="form-control" id="email" placeholder="email@example.com">
+        <div class="mb-3 row">
+            <label for="email" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-10">
+                <input type="email" name="email" class="form-control" id="email" placeholder="email@example.com">
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label for="password" class="col-sm-2 col-form-label">Password</label>
+            <div class="col-sm-10">
+                <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+            </div>
         </div>
         <div class="mb-3">
-            <label for="password" class="visually-hidden">Password</label>
-            <input type="password" name="password" class="form-control" id="password" placeholder="Password">
-        </div>
-        <div class="mb-3">
-            <button type="submit" class="btn btn-primary mb-3">Sign Up</button>
+            <button type="submit" class="btn btn-primary">Sign Up</button>
         </div>
     </form>
 
