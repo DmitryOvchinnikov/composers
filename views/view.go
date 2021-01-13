@@ -16,10 +16,6 @@ type View struct {
 	Layout   string
 }
 
-func (v *View) Render(w http.ResponseWriter, data interface{}) error {
-	return v.Template.ExecuteTemplate(w, v.Layout, data)
-}
-
 func NewView(layout string, files ...string) *View {
 
 	files = append(files, layoutFiles()...)
@@ -34,6 +30,10 @@ func NewView(layout string, files ...string) *View {
 		Layout: layout,
 	}
 
+}
+
+func (v *View) Render(w http.ResponseWriter, data interface{}) error {
+	return v.Template.ExecuteTemplate(w, v.Layout, data)
 }
 
 // layoutFiles returns a slice of strings representing
